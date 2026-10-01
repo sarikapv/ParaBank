@@ -1,0 +1,11 @@
+{
+    "opentransferFunds":"[href='transfer.htm']",
+    "enterAmount":"[id='amount']",
+    "fromAccountId":"select[id='fromAccountId']",
+    "toAccountId":"select[id='toAccountId']",
+    "clickTransfer":"input[value='Transfer']",
+    "amountTransferred": "[id='amountResult']",
+    "fromAccountResult":"[id='fromAccountIdResult']",
+    "toAccountResult":"[id='toAccountIdResult']"
+    
+}

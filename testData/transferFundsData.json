@@ -1,0 +1,12 @@
+{
+        "SufficientFunds": {
+                "fromAccount": "14676",
+                "toAccount": "13566",
+                "amount": "500"
+        },
+        "insufficientFunds": {
+                "fromAccount": "14676",
+                "toAccount": "14898",
+                "amount": "1000"
+        }
+}

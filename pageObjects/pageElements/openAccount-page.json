@@ -1,0 +1,8 @@
+{
+
+    "openNewAccount":"a[href='openaccount.htm']",
+    "accountType":"select[id='type']",
+    "fromAccount":"select[id='fromAccountId']",
+    "clickOpenNewAccount": "input[value='Open New Account']",
+    "newAccountID":"[id='newAccountId']"
+}

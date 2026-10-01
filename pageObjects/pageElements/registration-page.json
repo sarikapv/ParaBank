@@ -1,0 +1,17 @@
+{
+  
+    "firstName": "input[id='customer.firstName']",
+    "lastName": "input[id='customer.lastName']",
+    "address": "input[id='customer.address.street']",
+    "city": "input[id='customer.address.city']",
+    "state": "input[id='customer.address.state']",
+    "zipCode": "input[id='customer.address.zipCode']",
+    "phoneNumber": "input[id='customer.phoneNumber']",
+    "ssn": "input[id='customer.ssn']",
+    "userName": "input[id='customer.username']",
+    "password": "input[id='customer.password']",
+    "confirmPassword": "input[id='repeatedPassword']",
+    "registerButton": "input[type='submit'][value='Register']",
+    "zipcodeError":"span[id='customer.address.zipCode.errors']",
+    "ssnError":"span[id='customer.ssn.errors']"
+}

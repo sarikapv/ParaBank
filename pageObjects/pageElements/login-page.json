@@ -1,0 +1,7 @@
+{
+    "userName": "input[name='username']",
+    "password": "input[name='password']",
+    "loginButton": "input[value='Log In']",
+    "acountOverview": "//h2[text()='Account Services']",
+    "errorMessage": "p[class='error']"
+}

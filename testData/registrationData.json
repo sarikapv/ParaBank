@@ -1,0 +1,27 @@
+{
+  "validUser": {
+    "firstName": "John",
+    "lastName": "Joe",
+    "address": "123 Main Street",
+    "city": "Bangalore",
+    "state": "KA",
+    "zipCode": "8965878",
+    "phoneNumber": "8974526987",
+    "ssn": "123-45-6789",
+    "username": "Joe",
+    "password": "Joe@123"
+  },
+  
+  "InvalidUser": {
+    "firstName": "John",
+    "lastName": "Joe",
+    "address": "123 Main Street",
+    "city": "Bangalore",
+    "state": "KA",
+    "zipCode": "",
+    "phoneNumber": "8974526987",
+    "ssn": "",
+    "username": "Joe",
+    "password": "Joe@123"
+  }
+}

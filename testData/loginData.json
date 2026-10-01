@@ -1,0 +1,6 @@
+{
+    "InvalidCredentials": {
+        "username": "John",
+        "password": "John@1234"
+    }
+}

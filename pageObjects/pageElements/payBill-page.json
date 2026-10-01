@@ -1,0 +1,29 @@
+{
+    "billPay": "a[href='billpay.htm']",
+   "titleBillPaymentservice":"//h1[@class='title' and text()='Bill Payment Service']",
+   
+   "payeeName":"input[name='payee.name']",
+   "address":"input[name='payee.address.street']",
+   "city": "input[name='payee.address.city']",
+   "state":"input[name='payee.address.state']",
+   "zipCode":"input[name='payee.address.zipCode']",
+   "phoneNumber":"input[name='payee.phoneNumber']",
+   "payeeAccountNumber":"input[name='payee.accountNumber']",
+   "verifyAccountNumber":"input[name='verifyAccount']",
+   "amount":"input[name='amount']",
+   
+   "fromAccount":"select[name='fromAccountId']",
+   "clickButton":"input[value='Send Payment']",
+
+   "title":"//h1[@class='title' and text()='Bill Payment Complete!']",
+   "transferredPayeeName": "#billpayResult span[id='payeeName']",
+  
+   "amountTransferred":"span[id='amount']",
+   "fromAccountTransferred":"span[id='fromAccountId']",
+   "accountActivity":"//p[text()='See Account Activity for more details.']",
+
+   "clickSendPayment":"input[value='Send Payment']",
+   "addressMissing": "//span[@class='error' and text()='Address is required.']",
+   "zipcodeMissing":"//span[@class='error' and text()='Zip Code is required.']"
+
+}

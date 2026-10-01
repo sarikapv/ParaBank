@@ -1,0 +1,34 @@
+{
+    
+    "validPayeeInformation":{
+    "payeeName": "Harsh",
+    "address":"5thCross,Phrase Town",
+    "city":"NY",
+    "state": "US",
+    "zipcode1":"7845693",
+    "phoneNumber":"8797895697",
+    "payeeAccountNumber": "457893",
+    "verifyAccountNumber":"457893",
+    "amount": "1000",
+    "fromAccount":"13566"
+},
+
+    "invalidOrMissingPayeeInformation":{
+    "payeeName": "Karan",
+    "address":"",
+    "city":"YUMI",
+    "state": "OP",
+    "zipcode":"",
+    "phone":"9875962689",
+    "accountNumber": "457893",
+    "verifyAccount":"457893",
+    "amount": "2000",
+    "fromAccount":"13566"
+},
+
+"errorMessage":{
+    "addressField": "Address is required.",
+    "ZipCode": "Zip Code is required."
+}
+
+}
