@@ -30,19 +30,21 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    video:'on',
-    screenshot:'on'
+    video: 'on',
+    screenshot: 'on'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
+      testIgnore: '**/api/**',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
       name: 'firefox',
+      testIgnore: '**/api/**',
       use: { ...devices['Desktop Firefox'] },
     },
 
@@ -51,6 +53,12 @@ export default defineConfig({
     //   use: { ...devices['Desktop Safari'] },
     // },
 
+    //API project setup
+    {
+      name: 'api',
+      testMatch: '**/api/**/*.spec.ts',
+      use: { extraHTTPHeaders: { Accept: 'application/json' } },
+    },
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',

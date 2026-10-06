@@ -1,0 +1,66 @@
+{
+  "invalidLogin": {
+    "password": "wrongPassword123"
+  },
+  "nonExistentCustomerId": "99999999",
+  "nonExistentAccountId": "99999999",
+  "invalidAccountId": "abc",
+  "createAccount": {
+    "savingsType": "1"
+  },
+  "createAccountInvalidType": {
+    "savingsType": "1",
+    "invalidType": "9"
+  },
+  "validLogin": {
+    "userName": "John",
+    "password": "demo"
+  },
+  "getCustomerDetails": {
+    "customerId": "12212",
+    "firstname": "John",
+    "lastName": "Smith",
+    "name": "John Smith",
+    "address": "1431 Main St,Beverly Hills,CA,90210",
+    "street": "1431 Main St",
+    "city": "Beverly Hills",
+    "state": "CA",
+    "zipCode": "90210",
+    "phoneNumber": "9876543210",
+    "ssnNumber":"622-11-9999"
+  },
+  "getAccountDetails": {
+    "accountId": "12345"
+  },
+  "postAccountDetails": {
+    "fromAccountID": "13011",
+    "toAccountID": "12456",
+    "amount": "100"
+  },
+  "postBillPay": {
+    "accountID": "12567",
+    "billPayAmount": "100",
+    "payee": {
+      "name": "string",
+      "address": {
+        "street": "string",
+        "city": "string",
+        "state": "string",
+        "zipCode": "string"
+      },
+      "phoneNumber": "string",
+      "accountNumber": 0
+    }
+  },
+  "getTransactionFilter": {
+    "accountId": "12345",
+    "month": "9",
+    "type": "Debit"
+  },
+  "updateCustomer": {
+    "customerId": "12212",
+    "phoneNumber": "9876543210"
+}
+
+
+}
