@@ -3,7 +3,7 @@ import { ApiClient } from '../../commons/apiCommons';
 import testData from '../../testData/api/apiTestData.json'
 import { XMLParser } from 'fast-xml-parser';
 
-test('TC-API-03 - Get details for the customer returned by login', async ({ request }) => {
+test('TC-API-03 - Get details for the customer returned by login', {tag:['@api','@smoke','@regression']},async ({ request }) => {
 
     const api = new ApiClient(request);
     const response = await api.getCustomerID(testData.getCustomerDetails.customerId);
@@ -21,7 +21,7 @@ test('TC-API-03 - Get details for the customer returned by login', async ({ requ
 
 })
 
-test('TC-API-04 - Get details for a non-existent customer ID', async ({ request }) => {
+test('TC-API-04 - Get details for a non-existent customer ID',{tag:['@api', '@regression']}, async ({ request }) => {
     const api = new ApiClient(request);
 
     const response = await api.getCustomerID(testData.nonExistentCustomerId);

@@ -3,7 +3,7 @@ import { ApiClient } from '../../commons/apiCommons';
 import testData from '../../testData/api/apiTestData.json';
 import { XMLParser } from 'fast-xml-parser';
 
-test('TC-API-05 - Get list of customer accounts', async ({ request }) => {
+test('TC-API-05 - Get list of customer accounts',{tag:['@api', '@regression']}, async ({ request }) => {
 
     const api = new ApiClient(request);
     const response = await api.getCustomerAccounts(testData.getCustomerDetails.customerId);
@@ -19,7 +19,7 @@ test('TC-API-05 - Get list of customer accounts', async ({ request }) => {
     }
 });
 
-test('TC-API-06 - Get one account', async ({ request }) => {
+test('TC-API-06 - Get one account',{tag:['@api', '@regression','@smoke']}, async ({ request }) => {
 
     const api = new ApiClient(request);
     const response = await api.getAccount(testData.getAccountDetails.accountId);
@@ -33,14 +33,14 @@ test('TC-API-06 - Get one account', async ({ request }) => {
     expect(Number.isFinite(Number(account.balance))).toBe(true);
 });
 
-test('TC-API-07 - Get a non-existent account', async ({ request }) => {
+test('TC-API-07 - Get a non-existent account',{tag:['@api', '@regression']}, async ({ request }) => {
     const api = new ApiClient(request);
     const response = await api.getAccount(testData.nonExistentAccountId);
     expect(response.status()).toBe(400);
     expect(await response.text()).toBe(`Could not find account #${testData.nonExistentAccountId}`);
 });
 
-test('TC-API-08 - Get an account with a non-numeric ID', async ({ request }) => {
+test('TC-API-08 - Get an account with a non-numeric ID', {tag:['@api', '@regression']},async ({ request }) => {
     const api = new ApiClient(request);
     const response = await api.getAccount(testData.invalidAccountId);
     expect(response.status()).toBe(404);

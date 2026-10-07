@@ -10,19 +10,18 @@ test.beforeEach(async ({ page }) => {
     await loginPage.launchApplication();
 });
 
-test('TC-LOGIN-01-Successful login with valid credentials', async ({}) => {
+test('TC-LOGIN-01-Successful login with valid credentials',{tag:['@ui', '@regression', '@smoke']}, async ({}) => {
 
     await loginPage.fillText(config.userName, config.password);
     await loginPage.clickLoginButton();
     expect(await loginPage.isAccountServicesVisible()).toBe(true);
-
 });
 
-test('TC-LOGIN-02-Login fails with invalid credentials', async ({}) => {
+test('TC-LOGIN-02-Login fails with invalid credentials',{tag:['@ui', '@regression']}, async ({}) => {
     await loginPage.fillText(testData.InvalidCredentials.username,testData.InvalidCredentials.password);
     await loginPage.clickLoginButton()
-    const erroText = await loginPage.getErrorMessage();
-    expect(erroText).toBe("The username and password could not be verified.");
+    const errorText = await loginPage.getErrorMessage();
+    expect(errorText).toBe("The username and password could not be verified.");
 
 
 });

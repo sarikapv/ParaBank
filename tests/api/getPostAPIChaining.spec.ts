@@ -3,7 +3,7 @@ import { ApiClient } from '../../commons/apiCommons';
 import testData from '../../testData/api/apiTestData.json';
 import { XMLParser } from 'fast-xml-parser';
 
-test('TC-API-19 - API chaining: create account, transfer and verify transaction', async ({ request }) => {
+test('TC-API-19 - API chaining: create account, transfer and verify transaction',{tag:['@api', '@regression']}, async ({ request }) => {
 
     const api = new ApiClient(request);
     const parser = new XMLParser();
@@ -42,7 +42,6 @@ test('TC-API-19 - API chaining: create account, transfer and verify transaction'
         : [transactions];
 
     // 5. Verify the transfer appears
-
     const transferAmount = Number(testData.postAccountDetails.amount);
     const matchingTransaction = transactionList.find((transaction: any) =>
     Number(transaction.amount) === transferAmount &&transaction.type === 'Credit');

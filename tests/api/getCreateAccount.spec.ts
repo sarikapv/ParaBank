@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { ApiClient } from '../../commons/apiCommons';
-import testData from '../../testData/api/apiTestData.json'
+import testData from '../../testData/api/apiTestData.json';
 import { XMLParser } from 'fast-xml-parser';
 
-test('TC-API-09 - Create a SAVINGS account', async ({ request }) => {
+test('TC-API-09 - Create a SAVINGS account', {tag:['@api', '@regression']},async ({ request }) => {
     const api = new ApiClient(request);
     const customerId = testData.getCustomerDetails.customerId;
     const response = await api.createAccount(customerId, testData.createAccount.savingsType, testData.getAccountDetails.accountId);
@@ -20,7 +20,7 @@ test('TC-API-09 - Create a SAVINGS account', async ({ request }) => {
     expect(ids).toContain(newId);
 });
 
-test('TC-API-10 - Create an account with an invalid type', async ({ request }) => {
+test('TC-API-10 - Create an account with an invalid type',{tag:['@api', '@regression']}, async ({ request }) => {
     test.fail(); // Known defect DEF-API-01: ParaBank returns 500 with an HTML page; a 4xx is expected
     const api = new ApiClient(request);
     const response = await api.createAccount(

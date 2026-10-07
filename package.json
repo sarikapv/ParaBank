@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:smoke": "playwright test --grep @smoke --project=chromium --project=api",
+    "test:regression": "playwright test --grep @regression --project=chromium --project=api",
+    "test:ui": "playwright test --grep @ui --project=chromium",
+    "test:api": "playwright test --grep @api --project=api",
+    "test:e2e": "playwright test --grep @e2e --project=chromium"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

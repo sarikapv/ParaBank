@@ -3,7 +3,7 @@ import testData from '../../testData/api/apiTestData.json';
 import { ApiClient } from '../../commons/apiCommons';
 import { XMLParser } from 'fast-xml-parser';
 
-test('TC-API-20 - Protected endpoint is accessible without login (observed behaviour)', async ({ request }) => {
+test('TC-API-20 - Protected endpoint is accessible without login (observed behaviour)',{tag:['@api', '@regression']}, async ({ request }) => {
 
     // test.fail(); // ParaBank currently allows this request without authentication
 

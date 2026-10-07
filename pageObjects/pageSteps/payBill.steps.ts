@@ -12,15 +12,13 @@ export class payBillSteps {
         this.page = page,
             this.web = new webCommons(page);
     }
-
     async clickBillPay() {
         await this.page.click(payBill.billPay);
     }
-
     async verifybillPayTitle() {
+        await this.web.waitForElement(payBill.titleBillPaymentservice);
         return await this.web.isElementVisible(payBill.titleBillPaymentservice);
     }
-
     async enterPayeeInformation(payeeName: string, address: string, city: string, state: string, zipCode: string, phoneNumber: string, payeeAccountNumber: string, verifyAccountNumber: string, amount: string) {
         await this.web.fillText(payBill.payeeName, payeeName);
         await this.web.fillText(payBill.address, address);
@@ -32,54 +30,41 @@ export class payBillSteps {
         await this.web.fillText(payBill.verifyAccountNumber, verifyAccountNumber);
         await this.web.fillText(payBill.amount, amount);
     }
-
     async selectFromAccount(fromAccountNumber: string) {
         await this.web.selectDropdownByLabel(payBill.fromAccount, fromAccountNumber);
     }
-
     async clickSendPayment() {
         await this.web.click(payBill.clickButton);
     }
-
     async verifyTitlePaymentComplete() {
-        return await this.web.isElementVisible(payBill.title);
-    }
-
-    //     async verifyTransferredPayeeName(): Promise<string> {
-    //     return (await this.web.getInnerText(payBill.transferredPayeeName)) ?? '';
-    // }
+    const locator = this.web.element(payBill.title);
+    await locator.waitFor({ state: 'visible' });
+    return await locator.isVisible();
+}
     async verifyTransferredPayeeName(): Promise<string> {
         const locator = this.web.element(payBill.transferredPayeeName);
-        // console.log("COUNT:", await locator.count());
-        // console.log("TEXT CONTENTS:", await locator.allTextContents());
-        return (await locator.textContent()) ?? '';
+        await locator.waitFor({ state: 'visible' });
+        return (await locator.innerText()).trim();
     }
-
     async amountTransferred() {
         return (await this.web.getText(payBill.amountTransferred)) ?? '';
-
     }
-
     async verifyFromAccountNumber() {
         return (await this.web.getText(payBill.fromAccountTransferred)) ?? '';
-
     }
-
     async verifyMessageAccountActivity() {
-        return await this.web.isElementVisible(payBill.accountActivity);
+        const locator = this.web.element(payBill.accountActivity);
+        await locator.waitFor({ state: 'visible' });
+        return await locator.isVisible();
     }
-
-    async SendPayment(){
-       return await this.web.click(payBill.clickSendPayment);
+    async SendPayment() {
+        return await this.web.click(payBill.clickSendPayment);
     }
     // Missing information
     async getAddressMissingError(): Promise<string> {
         return (await this.web.getText(payBill.addressMissing)) ?? '';
-
     }
-
     async getZipCodeMissingError(): Promise<string> {
         return (await this.web.getText(payBill.zipcodeMissing)) ?? '';
-
     }
 }

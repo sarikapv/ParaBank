@@ -15,7 +15,7 @@
    "fromAccount":"select[name='fromAccountId']",
    "clickButton":"input[value='Send Payment']",
 
-   "title":"//h1[@class='title' and text()='Bill Payment Complete!']",
+   "title":"//h1[@class='title' and text()='Bill Payment Complete']",
    "transferredPayeeName": "#billpayResult span[id='payeeName']",
   
    "amountTransferred":"span[id='amount']",

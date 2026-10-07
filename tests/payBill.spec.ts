@@ -8,12 +8,11 @@ test.beforeEach(async ({ logInPage }) => {
     payBill = new payBillSteps(logInPage);
 });
 
-test('TC-BILL-01 Successful bill payment with valid payee details', async ({ }) => {
+test('TC-BILL-01 Successful bill payment with valid payee details',{tag:['@ui', '@smoke', '@regression']}, async ({ }) => {
 
    //Click billPay and enter the payee Information
     await payBill.clickBillPay();
     expect(await payBill.verifybillPayTitle()).toBe(true);
-
     await payBill.enterPayeeInformation(
         testData.validPayeeInformation.payeeName,
         testData.validPayeeInformation.address,
@@ -35,7 +34,7 @@ test('TC-BILL-01 Successful bill payment with valid payee details', async ({ }) 
     expect(await payBill.verifyMessageAccountActivity()).toBe(true);
 });
 
-test('TC-BILL-02  Bill payment fails with invalid/incomplete payee details', async ({}) => {
+test('TC-BILL-02  Bill payment fails with invalid/incomplete payee details',{tag:['@ui','@regression']}, async ({}) => {
 
     //Click billPay and enter the payee Information
     await payBill.clickBillPay();

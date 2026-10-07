@@ -12,27 +12,21 @@ export class loginSteps {
         this.page = page;
         this.web = new webCommons(page);
     }
-
     //launch Application
     async launchApplication() {
         await this.web.launchApplication(config.baseUrl);
     }
-
     //login
     async fillText(username: string, password: string) {
         await this.web.fillText(login.userName, username);
         await this.web.fillText(login.password, password);
-
     }
-
     async clickLoginButton(){
         await this.web.click(login.loginButton);
     }
-
     async isAccountServicesVisible(){
        return await this.web.isElementVisible(login.acountOverview);
     }
-
     async getErrorMessage():Promise<string>{
         return (await this.web.getText(login.errorMessage))??'';
     }

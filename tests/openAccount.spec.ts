@@ -3,10 +3,9 @@ import { openAccountSteps } from '../pageObjects/pageSteps/openAccount-steps';
 import testData  from "../testData/openAccountData.json";
 
 
-test('TC-OPENACC-01-Successfully open a new account', async ({ logInPage }) => {
+test('TC-OPENACC-01-Successfully open a new account', {tag:['@ui', '@smoke', '@regression']}, async ({ logInPage }) => {
 
-
-const openAccount = new openAccountSteps(logInPage);
+    const openAccount = new openAccountSteps(logInPage);
 
 // Click Open new Account and enter data
 await openAccount.openNewAccount();

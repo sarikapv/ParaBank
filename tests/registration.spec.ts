@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
     await registration.navigateToRegistrationPage();
 });
 
-test('TC-REG-01-Successful registration with valid details', async () => {
+test('TC-REG-01-Successful registration with valid details',{tag:['@ui', '@smoke', '@regression']}, async () => {
     const uniqueUsername = generateUniqueUsername('sarika');
 
     await registration.fillRegisterForm(
@@ -31,7 +31,7 @@ test('TC-REG-01-Successful registration with valid details', async () => {
     await registration.clickRegisterButton();
 });
 
-test('TC-REG-02-Registration fails with missing/invalid mandatory fields', async () => {
+test('TC-REG-02-Registration fails with missing/invalid mandatory fields',{tag:['@ui', '@regression']}, async () => {
     await registration.fillRegisterForm(
         testData.InvalidUser.firstName,
         testData.InvalidUser.lastName,
