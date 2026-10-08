@@ -35,7 +35,7 @@ jobs:
           docker logs parabank
           exit 1
       - name: Run regression tests
-        run: npm run test:regression
+        run: npx playwright test --grep "@regression" --project=chromium --project=api
         env:
           BASE_URL: http://localhost:8080/parabank/
           PARABANKUSERNAME: ${{ secrets.PARABANKUSERNAME }}
