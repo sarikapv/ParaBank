@@ -5,40 +5,28 @@ export class webCommons {
     page: Page;
     constructor(page: Page) {
         this.page = page;
-
     }
-
-    // Navigation & Page Load
-
-    // navigateTo(url) — go to a URL
-    async launchApplication(url: string) {
+     async launchApplication(url: string) {
         await this.page.goto(url);
     }
-
     element(locator: string): Locator {
         return this.page.locator(locator);
     }
-
     // waitForPageLoad() — wait for network idle / load state
     async waitForPageLoad(): Promise<void> {
         await this.page.waitForLoadState('load');
     }
-
     async waitForElement(locator: string): Promise<void> {
         const element = this.element(locator);
         await element.waitFor({ state: 'visible' });
     }
-
     // getCurrentUrl() / getPageTitle()
-
     async getCurrentUrl(): Promise<string> {
-        return this.page.url();
+        return this.page.url();    
     }
-
     async getPageTitle(): Promise<string> {
         return await this.page.title();
     }
-
     // Element Interaction
 
     // click(locator)
@@ -96,6 +84,8 @@ export class webCommons {
     async selectDropdownByIndex(locator: string, index: number) {
     await this.page.locator(locator).selectOption({ index });
 }
+
+
     // checkCheckbox(locator) / uncheckCheckbox(locator)
     async checkBox(locator: string): Promise<void> {
         const element = this.element(locator);

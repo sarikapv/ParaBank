@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { loginSteps } from '../../pageObjects/pageSteps/login-steps';
 import { openAccountSteps } from '../../pageObjects/pageSteps/openAccount-steps';
 import { config } from '../../config/config';
-import openAccountData from '../../testData/openAccountData.json';
+import openAccountData from '../../testData/ui/openAccountData.json';
 
 let loginPage: loginSteps;
 let openAccountPage: openAccountSteps;

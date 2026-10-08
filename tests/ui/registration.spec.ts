@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import testData from "../testData/registrationData.json";
-import { registrationSteps } from '../pageObjects/pageSteps/registration-steps';
-import { generateUniqueUsername } from '../utilities/generateUniqueUsername';
+import testData from "../../testData/ui/registrationData.json";
+import { registrationSteps } from '../../pageObjects/pageSteps/registration-steps';
+import { generateUniqueUsername } from '../../utilities/generateUniqueUsername';
 
 //registration is declared outside both the hook and the tests, so both tests can access the same variable
 // but it gets freshly created before each test runs, so there's no leftover state between them.

@@ -1,6 +1,6 @@
-import {test,expect} from '../fixtures/baseFixture';
-import { openAccountSteps } from '../pageObjects/pageSteps/openAccount-steps';
-import testData  from "../testData/openAccountData.json";
+import {test,expect} from '../../fixtures/baseFixture';
+import { openAccountSteps } from '../../pageObjects/pageSteps/openAccount-steps';
+import testData  from "../../testData/ui/openAccountData.json";
 
 
 test('TC-OPENACC-01-Successfully open a new account', {tag:['@ui', '@smoke', '@regression']}, async ({ logInPage }) => {
