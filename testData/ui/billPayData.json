@@ -9,8 +9,7 @@
     "phoneNumber":"8797895697",
     "payeeAccountNumber": "457893",
     "verifyAccountNumber":"457893",
-    "amount": "1000",
-    "fromAccount":"13566"
+    "amount": "1000"
 },
 
     "invalidOrMissingPayeeInformation":{

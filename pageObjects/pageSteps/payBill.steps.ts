@@ -30,17 +30,22 @@ export class payBillSteps {
         await this.web.fillText(payBill.verifyAccountNumber, verifyAccountNumber);
         await this.web.fillText(payBill.amount, amount);
     }
-    async selectFromAccount(fromAccountNumber: string) {
-        await this.web.selectDropdownByLabel(payBill.fromAccount, fromAccountNumber);
+    async selectFromAccount(): Promise<string> {
+        const dropdown = this.web.element(payBill.fromAccount);
+        const options = dropdown.locator('option');
+        await options.first().waitFor({ state: 'attached' });
+        const accountNumber = ((await options.first().textContent()) ?? '').trim();
+        await this.web.selectDropdownByLabel(payBill.fromAccount,accountNumber);
+        return accountNumber;
     }
     async clickSendPayment() {
         await this.web.click(payBill.clickButton);
     }
     async verifyTitlePaymentComplete() {
-    const locator = this.web.element(payBill.title);
-    await locator.waitFor({ state: 'visible' });
-    return await locator.isVisible();
-}
+        const locator = this.web.element(payBill.title);
+        await locator.waitFor({ state: 'visible' });
+        return await locator.isVisible();
+    }
     async verifyTransferredPayeeName(): Promise<string> {
         const locator = this.web.element(payBill.transferredPayeeName);
         await locator.waitFor({ state: 'visible' });

@@ -1,7 +1,6 @@
 import { Page } from '@playwright/test';
 import transferFunds from '../pageElements/transferFunds-page.json'
 import { webCommons } from '../../commons/webCommons';
-import { config } from '../../config/config';
 
 export class transferFundsSteps {
     page: Page;
@@ -19,9 +18,17 @@ export class transferFundsSteps {
         await this.web.fillText(transferFunds.enterAmount, amount);
     }
     async fromAccount(account: string) {
-        await this.web.selectDropdownByValue(transferFunds.fromAccountId, account)
+        await this.web.selectDropdownByValue(transferFunds.fromAccountId, account);
     }
+    async getFirstFromAccount(): Promise<string> {
+        const options = this.page.locator(transferFunds.fromAccountId).locator('option');
+        await options.first().waitFor({ state: 'attached' });
+        return (await options.first().textContent())?.trim() ?? '';
+    }
+
     async toAccount(account: string) {
+        const options = this.page.locator(transferFunds.toAccountId).locator('option');
+        await options.first().waitFor({ state: 'attached' });
         await this.web.selectDropdownByValue(transferFunds.toAccountId, account);
     }
     async clickTransfer() {

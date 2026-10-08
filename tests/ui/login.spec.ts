@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { loginSteps } from "../pageObjects/pageSteps/login-steps";
-import testData from "../testData/loginData.json";
-import { config } from "../config/config"
+import { loginSteps } from "../../pageObjects/pageSteps/login-steps";
+import testData from "../../testData/ui/loginData.json";
+import { config } from "../../config/config"
 
 let loginPage: loginSteps;
 
