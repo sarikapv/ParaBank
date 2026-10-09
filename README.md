@@ -1,30 +1,45 @@
-# ParaBank -- SDET Automation Framework
+# ParaBank – QA/SDET Automation Framework
 
 A portfolio project demonstrating UI, API, and end-to-end testing using
 **Playwright + TypeScript**, with GitHub Actions CI against the ParaBank
 banking application.
 
-> **Current status:** UI, API, and E2E automation are implemented. Smoke
-> CI and scheduled/manual regression CI are configured. Database
-> validation, AI-assisted testing, and application deployment CD are not
-> implemented yet.
+## Project Highlights
+
+- **Automation:** UI, API, and end-to-end testing using Playwright and TypeScript.
+- **Framework Design:** Reusable page elements, page steps, common utilities, fixtures, and test data.
+- **Test Coverage:** 16 UI tests, 20 API test cases, and 4 E2E journeys implemented.
+- **Cross-Browser Testing:** Chromium and Firefox.
+- **CI Automation:** GitHub Actions workflows for Smoke and Regression suites.
+- **Containerization:** ParaBank application started using Docker in CI.
+- **Reporting:** Playwright HTML reports and downloadable CI artifacts.
+- **Version Control:** Git feature branches, commits, and Pull Requests.
+
+> **Project status:** UI, API, and E2E automation implemented.
+> GitHub Actions Smoke CI runs on pushes and Pull Requests.
+> Scheduled and manually triggered Regression CI is configured.
+> Database validation, AI-assisted testing, and application deployment
+> automation are planned enhancements.
 
 ## Contents
 
--   [Project Overview](#project-overview)
--   [Technology Stack](#technology-stack)
--   [Coverage](#coverage)
--   [Framework Structure](#framework-structure)
--   [Local Setup](#local-setup)
--   [Test Execution](#test-execution)
--   [CI Workflows](#ci-workflows)
--   [Configuration and Secrets](#configuration-and-secrets)
--   [Reports and Debugging](#reports-and-debugging)
--   [Current Limitations](#current-limitations)
+- [Project Overview](#project-overview)
+- [Technology Stack](#technology-stack)
+- [Coverage](#coverage)
+- [Framework Structure](#framework-structure)
+- [Local Setup](#local-setup)
+- [Test Execution](#test-execution)
+- [Test Tags](#test-tags)
+- [CI Workflows](#ci-workflows)
+- [Configuration and Secrets](#configuration-and-secrets)
+- [Reports and Debugging](#reports-and-debugging)
+- [Future Enhancements](#future-enhancements)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Interview Summary](#interview-summary)
 
 ## Project Overview
 
-The goal is to demonstrate a maintainable SDET automation solution
+The goal is to demonstrate a maintainable QA/SDET automation solution
 across UI, API, and critical end-to-end banking journeys. The framework
 separates locators, page actions, common utilities, fixtures, test data,
 and test specifications.
@@ -297,32 +312,35 @@ assertions. 6. Re-run locally, push the fix, and confirm CI is green.
 Retries help with transient failures, but tests that pass only after
 retries should still be investigated for flakiness.
 
-## Current Limitations
+## Future Enhancements
 
--   **Database validation:** Not implemented; the project does not
-    currently claim direct SQL/database assertions.
--   **AI-assisted testing:** Not implemented; do not describe the
-    framework as AI-powered until a real AI capability is integrated and
-    demonstrated.
--   **Application deployment CD:** Not implemented. The current pipeline
-    focuses on CI test validation, not deployment to staging or
-    production.
--   The framework, test counts, commands, environment variables, and
-    workflow triggers should be updated in this README whenever they
-    change.
+- Database validation for critical banking transactions.
+- AI-assisted test failure analysis and reporting.
+- Application deployment automation.
 
+## Skills Demonstrated
+
+- Test automation using Playwright and TypeScript
+- UI, API, and end-to-end test design
+- Reusable automation framework architecture
+- Test data and environment configuration
+- Cross-browser execution
+- Git and GitHub collaboration workflow
+- CI pipeline configuration using GitHub Actions
+- Automated test reporting and failure investigation
+  
 ## Interview Summary
 
-> I built a Playwright and TypeScript automation framework for ParaBank
-> covering UI, API, and four critical end-to-end banking journeys. The
-> framework uses reusable page elements, page steps, common utilities,
-> fixtures, and test data. I implemented GitHub Actions CI: Smoke tests
-> run on pushes and Pull Requests, while a separate workflow runs
-> regression tests on a weekday schedule and can be triggered manually.
-> The pipeline starts ParaBank with Docker, waits for application
-> readiness, installs dependencies and browsers, uses GitHub repository
-> secrets for credentials, and uploads test artifacts for investigation.
-> Application deployment, database validation, and AI-assisted testing
-> are not implemented yet.
+> I built a QA/SDET automation framework for the ParaBank banking
+> application using Playwright and TypeScript. The framework covers UI,
+> API, and four critical end-to-end banking journeys, with reusable page
+> elements, page steps, common utilities, fixtures, and test data.
+> I implemented GitHub Actions CI workflows for Smoke validation on
+> pushes and Pull Requests, along with scheduled and manually triggered
+> Regression testing. The workflows start ParaBank using Docker, verify
+> application readiness, execute automated tests, and upload test
+> reports and results for investigation.
+> The project demonstrates test automation, framework design, Git
+> collaboration, and CI pipeline implementation.
 
 Repository: https://github.com/sarikapv/ParaBank
