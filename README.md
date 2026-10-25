@@ -1,4 +1,6 @@
 # ParaBank – QA/SDET Automation Framework
+![Smoke Tests](https://github.com/sarikapv/ParaBank/actions/workflows/smoke.yml/badge.svg)
+![Regression Tests](https://github.com/sarikapv/ParaBank/actions/workflows/regression.yml/badge.svg)
 
 A portfolio project demonstrating UI, API, and end-to-end testing using
 **Playwright + TypeScript**, with GitHub Actions CI against the ParaBank
@@ -64,6 +66,7 @@ scheduled/manual regression execution with GitHub Actions.
 ## Coverage
 
 Latest recorded successful full regression run: **32 tests passed**.
+- Example: “UI tests run on Chromium and Firefox, so they count twice in the full run. The regression suite (UI, API and E2E) has 32 tests.”
 
   -----------------------------------------------------------------------
   Layer                   Coverage                Recorded status
@@ -331,16 +334,10 @@ retries should still be investigated for flakiness.
   
 ## Interview Summary
 
-> I built a QA/SDET automation framework for the ParaBank banking
-> application using Playwright and TypeScript. The framework covers UI,
-> API, and four critical end-to-end banking journeys, with reusable page
-> elements, page steps, common utilities, fixtures, and test data.
-> I implemented GitHub Actions CI workflows for Smoke validation on
-> pushes and Pull Requests, along with scheduled and manually triggered
-> Regression testing. The workflows start ParaBank using Docker, verify
-> application readiness, execute automated tests, and upload test
-> reports and results for investigation.
-> The project demonstrates test automation, framework design, Git
-> collaboration, and CI pipeline implementation.
+> I built a QA/SDET automation framework for the ParaBank banking application using Playwright and TypeScript.
+> The framework covers UI, API, and four critical end-to-end banking journeys, with reusable page elements, page steps, common utilities, fixtures, and test data.
+> I implemented GitHub Actions CI workflows for Smoke validation on pushes and Pull Requests, along with scheduled and manually triggered Regression testing.
+> The workflows start ParaBank using Docker, verify application readiness, execute automated tests, and upload test reports and results for investigation.
+> The project demonstrates test automation, framework design, Git, collaboration, and CI pipeline implementation.
 
 Repository: https://github.com/sarikapv/ParaBank
