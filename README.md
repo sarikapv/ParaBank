@@ -10,7 +10,7 @@ banking application.
 
 - **Automation:** UI, API, and end-to-end testing using Playwright and TypeScript.
 - **Framework Design:** Reusable page elements, page steps, common utilities, fixtures, and test data.
-- **Test Coverage:** 16 UI tests, 20 API test cases, and 4 E2E journeys implemented.
+- **Test Coverage:** 8 UI tests, 4 E2E journeys and 20 API tests (32 unique tests).
 - **Cross-Browser Testing:** Chromium and Firefox.
 - **CI Automation:** GitHub Actions workflows for Smoke and Regression suites.
 - **Containerization:** ParaBank application started using Docker in CI.
@@ -66,29 +66,14 @@ scheduled/manual regression execution with GitHub Actions.
 ## Coverage
 
 Latest recorded successful full regression run: **32 tests passed**.
-- Example: “UI tests run on Chromium and Firefox, so they count twice in the full run. The regression suite (UI, API and E2E) has 32 tests.”
+ The regression suite has 32 unique tests (8 UI, 4 E2E and 20 API). UI and E2E tests are set up for Chromium and Firefox, so running every browser executes 44 tests.
 
-  -----------------------------------------------------------------------
-  Layer                   Coverage                Recorded status
-  ----------------------- ----------------------- -----------------------
-  UI                      Registration, login,    16 tests passed locally
-                          account opening,        
-                          transfer, bill payment, 
-                          and related flows       
-
-  API                     Login/authentication,   20 API test cases
-                          customer details,       implemented
-                          accounts, account       
-                          creation, transfers,    
-                          bill pay, transactions, 
-                          customer update         
-
-  E2E                     Four critical user      4 E2E tests completed
-                          journeys                
-
-  Regression              Tagged regression suite Latest successful CI
-                                                  run: 32 passed
-  -----------------------------------------------------------------------
+| Layer | Coverage | Recorded status |
+|---|---|---|
+| UI | Registration, login, account opening, transfer, bill payment | 8 tests, passed locally |
+| API | Login/authentication, customer details, accounts, account creation, transfers, bill pay, transactions, customer update | 20 tests, implemented |
+| E2E | Four critical user journeys | 4 tests, completed |
+| Regression | Tagged regression suite | Latest successful CI run: 32 passed |
 
 ### E2E journeys
 
